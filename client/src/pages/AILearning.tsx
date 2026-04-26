@@ -78,6 +78,60 @@ const palmReadingPrompt = `请根据我上传的手掌照片，生成一张竖�
 - 字体感觉：标题用中文书法/宋体风，正文用清晰中文排版。
 - 输出效果：像一张完整的 AI 手相分析报告，信息丰富但布局有序，不要乱码，不要低清晰度。`;
 
+const encyclopediaCoverPrompt = `请生成一张 3:4 比例的「猫咪品种自然百科图鉴」海报。
+
+主题：布偶猫、缅因猫、英国短毛猫、波斯猫、苏格兰折耳猫、孟加拉猫、西伯利亚猫、阿比西尼亚猫、暹罗猫、挪威森林猫。
+
+设计要求：
+- 风格：自然历史博物馆百科页、复古科学插画、高级信息图、旧羊皮纸背景。
+- 背景：米黄色复古纸张，轻微水渍、纸张纤维、旧书边缘。
+- 构图：9-15 个主体密集但有秩序地排列，中央主体略大，周围主体错落分布，形成 3D 层次。
+- 主体：每只猫都要高度真实，毛发、眼睛、体型特征清晰。
+- 标题：顶部大字「猫咪品种图鉴」，中文必须清晰可读。
+- 标签：每只猫旁边标注中文名称 + 简短说明，可加入小号英文名。
+- 装饰：细线标注、分类编号、复古印章、S/A/B/C 等级徽章、古铜金和暗红色点缀。
+- 输出：博物馆级百科信息图，文字清晰，不要乱码，不要品牌 logo。`;
+
+const encyclopediaSinglePrompt = `请生成一张 3:4 比例的「布偶猫百科图解」海报。
+
+设计要求：
+- 风格：复古自然百科、高级科学插画、米黄色旧纸张、细腻边框、复古印章。
+- 中央主体：一只高度真实、毛发蓬松、蓝眼睛清晰的布偶猫，占据 C 位，并呈现轻微 3D 跳出纸面的效果。
+- 留白：主体周围保留适当留白，增强视觉冲击。
+- 知识模块：四周加入 6-8 个清晰模块，包括外貌特征、性格特点、体型结构、毛发护理、饮食建议、适合人群、品种起源、常见注意事项。
+- 连接：每个模块用细线、箭头、标注连接到猫咪对应部位。
+- 标题：主标题「布偶猫图解百科」，中文书法或宋体风。
+- 正文：简体中文，清晰可读，不要乱码。
+- 输出：专业百科杂志页面，信息密集但排版有序，不要品牌 logo。`;
+
+const garlicLifePrompt = `以「大蒜的一生」为主题生成一张竖版 3:4 科普信息图。
+
+关键要求：
+- 画面中必须是「一个完整的单体大蒜」，通过横向切片表现同一头大蒜在不同时间阶段的变化。
+- 不能画成多个独立大蒜拼接，主体结构要连续、形状一致，只是在不同切片区域呈现不同成熟度。
+- 主体居中横向展开，被均匀分割为 4-6 段。
+- 从左到右：未成熟 → 成熟 → 过熟 → 发芽 → 变质。
+
+每一段体现真实变化：
+- 颜色变化：洁白/微青 → 饱满洁白 → 发黄 → 发芽 → 霉变发黑。
+- 质地变化：紧实 → 饱满 → 软化/皱缩 → 发芽消耗养分 → 腐坏。
+- 特征变化：蒜皮、蒜瓣、出芽、出水、霉点等。
+
+每个阶段配中文说明：
+- 阶段名称
+- 外观特点
+- 内部变化（水分/糖分/风味变化）
+- 食用建议（推荐 / 适合烹饪 / 谨慎 / 不可食用）
+
+设计风格：
+- 极简米色浅背景
+- 高真实感摄影风格
+- 清晰分割线，有时间切片感
+- 小红书中文科普排版
+- 适当使用 ✔️ 和 ⚠️ 标识
+- 顶部标题：「大蒜的一生」
+- 手机端清晰易读，不要乱码，不要品牌 logo。`;
+
 const steps = ["扫码关注", "私信关键词：AI", "领取资料包", "跟着清单练习"];
 
 export default function AILearning() {
@@ -318,6 +372,67 @@ export default function AILearning() {
                   </pre>
                 </CardContent>
               </Card>
+            </div>
+
+            <div className="mt-10 rounded-[2rem] border border-[#ffd7df] bg-white/80 p-5 shadow-sm dark:border-white/10 dark:bg-white/10 md:p-8">
+              <div className="mb-6 max-w-3xl">
+                <div className="mb-3 inline-flex rounded-full bg-[#ff2442]/10 px-3 py-1 text-sm font-bold text-[#ff2442]">
+                  AI 图文起号模板
+                </div>
+                <h3 className="text-2xl font-black md:text-3xl">
+                  图解万物 / 懂吃研究所，可连续更新的图文玩法
+                </h3>
+                <p className="mt-3 leading-7 text-[#765f59] dark:text-[#dec8c0]">
+                  适合做小红书系列号：群像图负责点击，单体图负责专业感，「食物的一生」负责收藏和转发。
+                </p>
+              </div>
+
+              <div className="grid gap-5 lg:grid-cols-3">
+                <Card className="rounded-3xl border-[#ead4c5] bg-[#fffdf8] dark:border-white/10 dark:bg-white/10">
+                  <CardContent className="space-y-4 p-5">
+                    <div className="inline-flex rounded-full bg-[#2b1b18] px-3 py-1 text-xs font-bold text-white">
+                      图解万物 · 首页封面
+                    </div>
+                    <h4 className="text-xl font-black">猫咪品种图鉴</h4>
+                    <p className="text-sm leading-6 text-[#765f59] dark:text-[#dec8c0]">
+                      一张图展示多个主体，适合做猫狗、植物、职业、城市等群像图鉴封面。
+                    </p>
+                    <pre className="max-h-[420px] overflow-auto rounded-2xl bg-[#2b1b18] p-4 text-left text-xs leading-6 text-[#fff7f4] whitespace-pre-wrap">
+                      {encyclopediaCoverPrompt}
+                    </pre>
+                  </CardContent>
+                </Card>
+
+                <Card className="rounded-3xl border-[#ead4c5] bg-[#fffdf8] dark:border-white/10 dark:bg-white/10">
+                  <CardContent className="space-y-4 p-5">
+                    <div className="inline-flex rounded-full bg-[#2b1b18] px-3 py-1 text-xs font-bold text-white">
+                      图解万物 · 单体百科
+                    </div>
+                    <h4 className="text-xl font-black">布偶猫百科图解</h4>
+                    <p className="text-sm leading-6 text-[#765f59] dark:text-[#dec8c0]">
+                      中央主体 + 周围知识模块，适合把一个主题拆成深度科普图。
+                    </p>
+                    <pre className="max-h-[420px] overflow-auto rounded-2xl bg-[#2b1b18] p-4 text-left text-xs leading-6 text-[#fff7f4] whitespace-pre-wrap">
+                      {encyclopediaSinglePrompt}
+                    </pre>
+                  </CardContent>
+                </Card>
+
+                <Card className="rounded-3xl border-[#ead4c5] bg-[#fffdf8] dark:border-white/10 dark:bg-white/10">
+                  <CardContent className="space-y-4 p-5">
+                    <div className="inline-flex rounded-full bg-[#ff2442] px-3 py-1 text-xs font-bold text-white">
+                      懂吃研究所 · 美食科普
+                    </div>
+                    <h4 className="text-xl font-black">大蒜的一生</h4>
+                    <p className="text-sm leading-6 text-[#765f59] dark:text-[#dec8c0]">
+                      用同一个食物的时间切片做科普，特别适合食材保存、厨房常识类内容。
+                    </p>
+                    <pre className="max-h-[420px] overflow-auto rounded-2xl bg-[#2b1b18] p-4 text-left text-xs leading-6 text-[#fff7f4] whitespace-pre-wrap">
+                      {garlicLifePrompt}
+                    </pre>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
